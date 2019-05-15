@@ -44,7 +44,7 @@ TEST_CASE ("aufgabe6","[aufgabe6]") {
         circles_7.push_back(c2); 
         circles_7.push_back(c3); 
         
-        std::sort(circles_7.begin(), circles_7.end(), [] (Circle c1, Circle c2)-> bool {return c1 < c2;}), circles_7.end();
+        std::sort(circles_7.begin(), circles_7.end(), [] (Circle c1, Circle c2)-> bool {return c1 < c2;});
 
         REQUIRE(std::is_sorted(circles_7.begin(), circles_7.end()));
     }

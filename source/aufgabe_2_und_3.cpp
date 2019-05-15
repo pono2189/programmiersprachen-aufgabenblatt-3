@@ -19,7 +19,7 @@ int main()
     
     std::list <unsigned int> list1; //unsigned: only 0 and positive numbers
 //Aufgabe 3.2
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 100; i++){
         list1.push_back(rand() % 100 );
     }
 
@@ -64,6 +64,12 @@ int main()
     for (std::set<int>::iterator it1=set1.begin(); it1!=set1.end(); ++it1){ //shows every entry of set1
 	    std::cout << ' ' << *it1;
     }
+
+    //Aufgabe 3.4
+    std::cout <<"\nCopy of List1\n";
+    std::vector<unsigned int> copy_list1(list1.size());
+    std::copy(std::begin(list1), std::end(list1),  std::begin(copy_list1));
+    std::copy(std::begin(copy_list1), std::end(copy_list1), std::ostream_iterator<int>(std::cout, "\n")); //list1 in vektor
 
 //Aufgabe 3.3
     std::map<int, int> map1; 
@@ -113,14 +119,6 @@ int main()
         }
     }
 
-
-//Aufgabe 3.6
-
-    std::vector<Circle> sorted_circles;
-    sorted_circles.push_back(a); 
-    sorted_circles.push_back(b); 
-    sorted_circles.push_back(c); 
-    std::sort(sorted_circles.begin(), sorted_circles.end());
 
     
 }
