@@ -27,7 +27,7 @@ TEST_CASE("filter alle vielfache von drei", "[erase]"){
         v.push_back(rand() % 100);
     } 
    
-    v.erase( std::remove_if( v.begin(), v.end(), is_not_multiple_of_3), v.end() ); 
+    v.erase( std::remove_if( v.begin(), v.end(), is_not_multiple_of_3), v.end()); 
 
 
     REQUIRE(std::all_of(v.begin(), v.end(), is_multiple_of_3));
