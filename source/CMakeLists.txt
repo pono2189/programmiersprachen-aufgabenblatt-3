@@ -10,6 +10,7 @@ circle circle.cpp
 vec2 vec2.cpp)
 
 
+add_executable(aufgabe_11 aufgabe_11.cpp)
 
 
 
