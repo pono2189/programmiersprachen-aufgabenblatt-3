@@ -23,29 +23,33 @@ Circle::Circle(float radius, Vec2 const& center, Color const& col, std::string c
         return radius_;
     }
 
-    Vec2 Circle::get_center()const
-    {
-        return center_;
-    }
-
-    Color Circle::get_col()const
-    {
-        return col_;
-    }
-
     std::string Circle::get_name()const
     {
         return name_;
     }
-std::ostream& operator<<(std::ostream & outstream,const Circle &c_1){
+std::ostream& operator<<(std::ostream & outstream,Circle const& c_1){
     return c_1.print(outstream);
 }
 
 std::ostream& Circle::print(std::ostream & outstream)const{
-    outstream << get_name() << "\n Radius: " << get_radius() <<"\n Center: " << get_center().x << ", " << get_center().y << "\n Color: \n" << get_col().r << ", " << get_col().b << ", " << get_col().b << " \n" ;
+    outstream << "\n Radius: " << radius_ <<"\n Center: " << center_.x << ", " << center_.y << "\n Color: " << col_.r << ", " << col_.b << ", " << col_.b << " \n" ;
     return outstream;
 };
+//std::string Circle::print()const{
+  //  return get_name() << "\n Radius: " << get_radius() <<"\n Center: " << get_center().x << ", " << get_center().y << "\n Color: \n" << get_col().r << ", " << get_col().b << ", " << get_col().b << " \n" ;
 
+//}
+
+//Aufgabe 3.6
+bool operator< (Circle const& c_1, Circle const& c_2){
+    return c_1.get_radius() < c_2.get_radius();
+}
+bool operator> (Circle const& c_1, Circle const& c_2){
+    return c_1.get_radius() > c_2.get_radius();
+}
+bool operator== (Circle const& c_1, Circle const& c_2){
+    return c_1.get_radius() == c_2.get_radius();
+}
 
 float const Circle::circumference(){
     float circum; 

@@ -19,9 +19,8 @@ class Circle{
         //void const draw(Window const& w, float thickness);
         bool const is_inside_(const Vec2& point);
         std::ostream& print(std::ostream & outstream) const;
+        //std::string Circle::print()const;
         float get_radius() const;
-        Vec2 get_center() const;
-        Color get_col() const;
         std::string get_name() const;
         
     private:
@@ -31,8 +30,9 @@ class Circle{
         std::string name_;
 };
 std::ostream& operator<<(std::ostream& outstream,const Circle &c_1);
-
-
+bool operator< (Circle const& c_1, Circle const& c_2);
+bool operator> (Circle const& c_1, Circle const& c_2);
+bool operator== (Circle const& c_1, Circle const& c_2);
 #endif
 
 

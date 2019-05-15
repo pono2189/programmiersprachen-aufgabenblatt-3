@@ -7,7 +7,10 @@
 #include <iterator>
 #include "circle.hpp"
 #include <string>
+#include <vector>
 #include "vec2.hpp"
+#include "color.hpp"
+#include <algorithm>
 
 
 
@@ -90,30 +93,34 @@ int main()
 //Aufgabe 3.4
 
     std::string name; 
-    Circle c1{450.0f,Vec2{200.0f,400.0f},Color{1.0f,0.0f,0.0f},"Circle1"};
-    Circle c2{100.0f,Vec2{600.0f,400.0f},Color{0.0f,1.0f,0.0f},"Circle2"};
-    Circle c3{30.0f,Vec2{200.0f,400.0f},Color{0.0f,0.0f,1.0f},"Circle3"};
-    Circle c4{450.0f,Vec2{200.0f,300.0f},Color{1.0f,1.0f,0.0f},"Circle1"};
+    Circle a = Circle{450.0f,Vec2{200.0f,400.0f},Color{1.0f,0.0f,0.0f},"a"};
+    Circle b = Circle{100.0f,Vec2{600.0f,400.0f},Color{0.0f,1.0f,0.0f},"b"};
+    Circle c = Circle{30.0f,Vec2{200.0f,400.0f},Color{0.0f,0.0f,1.0f},"c"};
+    Circle d = Circle{450.0f,Vec2{200.0f,300.0f},Color{1.0f,1.0f,0.0f},"d"};
 
     std::set<Circle> circles;
-       /* circles.insert(c1);
-        circles.insert(c2);
-        circles.insert(c3);
-        circles.insert(c4);
-
-     std::cout << "Please enter the name of your circle: \n";
-    std::cin >> name ; 
+        circles.insert(a);
+        circles.insert(b);
+        circles.insert(c);
+        circles.insert(d);
+    
+    //std::cout << "Please enter the name of your circle: \n";
+    //std::cin >> name ; 
    
-
     for(auto it1 = circles.begin(); it1 != circles.end(); it1++ ){
         if((*it1).get_name().compare(name)== 0){
-            std::cout<<*it1;
+            std::cout << *it1;
         }
     }
 
-*/
 
+//Aufgabe 3.6
 
+    std::vector<Circle> sorted_circles;
+    sorted_circles.push_back(a); 
+    sorted_circles.push_back(b); 
+    sorted_circles.push_back(c); 
+    std::sort(sorted_circles.begin(), sorted_circles.end());
 
-    return 0;
+    
 }
